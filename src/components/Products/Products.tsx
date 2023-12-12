@@ -17,6 +17,9 @@ const IProductInfoState = {
 const Products: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [productList, setProductList] = useState<ProductInterface[]>([]);
+  const [basketOfProducts, setBasketOfProducts] = useState<ProductInterface[]>(
+    []
+  );
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [productInfo, setProductInfo] =
     useState<IProductInfo>(IProductInfoState);
@@ -34,6 +37,10 @@ const Products: React.FC = () => {
   };
 
   const addToBasket = (item: ProductInterface) => {
+    let tempBasketOfProducts = basketOfProducts; // clone the value of basket products
+    basketOfProducts.push(item); // push new product in basket
+    setBasketOfProducts(tempBasketOfProducts); // set the new value of product basket
+
     const productDetails = {
       thumbnail: item.thumbnail,
       title: item.title,
