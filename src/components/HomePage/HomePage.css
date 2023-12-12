@@ -1,6 +1,21 @@
 .home {
-  padding-left: 120px;
-  padding-right: 120px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+/* Table styles */
+@media only screen and (min-width: 600px) {
+  .home {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .home {
+    margin-left: 120px;
+    margin-right: 120px;
+  }
 }
 
 .title {
