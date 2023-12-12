@@ -5,6 +5,7 @@ import { ReactComponent as HeartIcon } from "../../assets/icons/heart.svg";
 import { ReactComponent as GitCompare } from "../../assets/icons/git-compare.svg";
 
 import "./ProductCard.css";
+import { useHistory } from "react-router-dom";
 
 const ProductCard: React.FC<ProductInterface> = (product: ProductInterface) => {
   const {
@@ -17,7 +18,7 @@ const ProductCard: React.FC<ProductInterface> = (product: ProductInterface) => {
     category,
     thumbnail,
   } = product;
-
+  const history = useHistory();
   const [isShowAdd, setIsShowAdd] = useState<boolean>(false);
   const [isProductActive, setIsProductActive] = useState<boolean>(false);
   const [isShowOutOfStock, setIsShowOutOfStock] = useState<boolean>(false);
@@ -43,12 +44,18 @@ const ProductCard: React.FC<ProductInterface> = (product: ProductInterface) => {
     setIsShowOutOfStock(false); // hide out of stock label
   };
 
+  const handleClickProduct = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    history.push("/empty"); // navigate to the empty page when user click product
+  };
+
   return (
     <div
       className="card"
       key={id}
       onMouseOver={handleMouseOver}
       onMouseLeave={handleMouseLeave}
+      onClick={handleClickProduct}
     >
       <div className="card-content">
         <div className="card-img">

@@ -5,7 +5,7 @@ import { fetchProductsData } from "../../services/apiService";
 
 import "./Products.css";
 
-const Products = () => {
+const Products: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [productList, setProductList] = useState<ProductInterface[]>([]);
 
