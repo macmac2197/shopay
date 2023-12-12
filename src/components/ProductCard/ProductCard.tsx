@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import ProductRate from "../ProductRate/ProductRate";
 import { ProductInterface } from "../../types/ProductInterface";
 import { ReactComponent as HeartIcon } from "../../assets/icons/heart.svg";
 import { ReactComponent as GitCompare } from "../../assets/icons/git-compare.svg";
-import { ReactComponent as Star } from "../../assets/icons/star.svg";
+
 import "./ProductCard.css";
 
 const ProductCard: React.FC<ProductInterface> = (product: ProductInterface) => {
@@ -73,7 +74,7 @@ const ProductCard: React.FC<ProductInterface> = (product: ProductInterface) => {
       <div className="card-category">{category}</div>
       <div className="card-title">{title}</div>
       <div className="card-price">{`€ ${price}`}</div>
-      <div className="card-rating">{rating}</div>
+      <ProductRate rate={rating} stock={stock} />
       {isShowAdd && (
         <React.Fragment>
           <div className="card-divider" />

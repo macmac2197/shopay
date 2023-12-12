@@ -97,14 +97,6 @@
     line-height: 24px;
     margin-bottom: 16px;
   }
-  & .card-rating {
-    color: #606060;
-    font-family: Rubik;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 16px;
-  }
   & .card-divider {
     display: block;
     height: 1px;

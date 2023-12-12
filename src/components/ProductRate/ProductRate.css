@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  & .star {
+    min-width: 18px;
+    & svg {
+      position: absolute;
+    }
+  }
+  & .rate {
+    color: #606060;
+    font-family: Rubik;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    margin-left: 8px;
+  }
+}
