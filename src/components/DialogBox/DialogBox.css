@@ -1,0 +1,38 @@
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0a0808e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  & .dialog-content {
+    min-width: 502px;
+    border-radius: 4px;
+    padding: 16px;
+    background: #fff;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+    & .dialog-header {
+      display: flex;
+      width: 100%;
+      & .dialog-title {
+        color: #1b1b1b;
+        font-family: Rubik;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+      & .dialog-close {
+        margin-left: auto;
+        & svg {
+          margin-top: -2px;
+        }
+      }
+    }
+  }
+}

@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import ProductRate from "../ProductRate/ProductRate";
+import AddButton from "../AddButton/AddButton";
+import { useHistory } from "react-router-dom";
 import { ProductInterface } from "../../types/ProductInterface";
 import { ReactComponent as HeartIcon } from "../../assets/icons/heart.svg";
 import { ReactComponent as GitCompare } from "../../assets/icons/git-compare.svg";
 
 import "./ProductCard.css";
-import { useHistory } from "react-router-dom";
 
-const ProductCard: React.FC<ProductInterface> = (product: ProductInterface) => {
+interface IProductCard {
+  product: ProductInterface;
+  addToBasket: (product: ProductInterface) => void;
+}
+
+const ProductCard: React.FC<IProductCard> = ({ product, addToBasket }) => {
   const {
     id,
     title,
@@ -49,6 +55,16 @@ const ProductCard: React.FC<ProductInterface> = (product: ProductInterface) => {
     history.push("/empty"); // navigate to the empty page when user click product
   };
 
+  const handleClickAddToBasket = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    addToBasket(product); // add product to basket
+  };
+
+  const handleOnClickActions = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+    alert("Feature not yet avaialble!");
+  };
+
   return (
     <div
       className="card"
@@ -66,10 +82,10 @@ const ProductCard: React.FC<ProductInterface> = (product: ProductInterface) => {
         {isProductActive && (
           <React.Fragment>
             <div className="card-actions">
-              <div className="actions-btn">
+              <div className="actions-btn" onClick={handleOnClickActions}>
                 <GitCompare />
               </div>
-              <div className="actions-btn">
+              <div className="actions-btn" onClick={handleOnClickActions}>
                 <HeartIcon />
               </div>
             </div>
@@ -88,9 +104,10 @@ const ProductCard: React.FC<ProductInterface> = (product: ProductInterface) => {
       {isShowAdd && (
         <React.Fragment>
           <div className="card-divider" />
-          <div className="card-button">
-            <button type="button">Add To Basket</button>
-          </div>
+          <AddButton
+            title="Add to basket"
+            handleClick={handleClickAddToBasket}
+          />
         </React.Fragment>
       )}
     </div>
