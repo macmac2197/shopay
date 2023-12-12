@@ -53,6 +53,7 @@
         align-items: center;
         justify-content: center;
         border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
     }
     & .card-discount {
@@ -121,6 +122,9 @@
       text-transform: uppercase;
       text-align: center;
       cursor: pointer;
+    }
+    & :hover {
+      color: blue !important;
     }
   }
 }

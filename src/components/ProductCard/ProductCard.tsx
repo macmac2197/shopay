@@ -55,6 +55,7 @@ const ProductCard: React.FC<ProductInterface> = (product: ProductInterface) => {
           <img src={thumbnail} alt={title} />
         </div>
         {isShowOutOfStock && <div className="card-stock">Out of stock</div>}
+        {/* Product actions button */}
         {isProductActive && (
           <React.Fragment>
             <div className="card-actions">
@@ -74,7 +75,9 @@ const ProductCard: React.FC<ProductInterface> = (product: ProductInterface) => {
       <div className="card-category">{category}</div>
       <div className="card-title">{title}</div>
       <div className="card-price">{`€ ${price}`}</div>
+      {/* Product rating */}
       <ProductRate rate={rating} stock={stock} />
+      {/* Add to basket button */}
       {isShowAdd && (
         <React.Fragment>
           <div className="card-divider" />

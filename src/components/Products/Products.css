@@ -1,0 +1,16 @@
+.product-grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.product-grid-item {
+  margin: 0px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .product-grid-item {
+    margin: 10px;
+  }
+}
