@@ -73,6 +73,7 @@ const ProductCard: React.FC<IProductCard> = (props: IProductCard) => {
       onMouseOver={handleMouseOver}
       onMouseLeave={handleMouseLeave}
       onClick={handleClickProduct}
+      data-testid="product-card"
     >
       <div className="card-content">
         <div className="card-img">
@@ -84,10 +85,18 @@ const ProductCard: React.FC<IProductCard> = (props: IProductCard) => {
         {isProductActive && (
           <React.Fragment>
             <div className="card-actions">
-              <div className="actions-btn" onClick={handleOnClickActions}>
+              <div
+                data-testid="git-icon"
+                className="actions-btn"
+                onClick={handleOnClickActions}
+              >
                 <GitCompare />
               </div>
-              <div className="actions-btn" onClick={handleOnClickActions}>
+              <div
+                data-testid="heart-icon"
+                className="actions-btn"
+                onClick={handleOnClickActions}
+              >
                 <HeartIcon />
               </div>
             </div>
