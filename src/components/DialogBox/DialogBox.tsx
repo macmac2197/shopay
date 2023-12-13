@@ -8,7 +8,9 @@ interface IDialogBox {
   onClose: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-const DialogBox: React.FC<IDialogBox> = ({ children, onClose }) => {
+const DialogBox: React.FC<IDialogBox> = (props: IDialogBox) => {
+  const { children, onClose } = props;
+
   return (
     <div className="dialog-overlay">
       <div className="dialog-content" onClick={(e) => e.stopPropagation()}>

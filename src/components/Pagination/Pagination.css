@@ -1,0 +1,27 @@
+.pagination {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & .page-text {
+    color: #1b1b1b;
+    font-family: Rubik;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    padding: 8px;
+  }
+  & .page-button {
+    border: none;
+    color: #1b1b1b;
+    font-family: Rubik;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    cursor: pointer;
+    background-color: rgb(205, 201, 201);
+    border-radius: 4px;
+  }
+}

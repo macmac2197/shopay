@@ -6,7 +6,9 @@ interface IAddButton {
   handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const AddButton: React.FC<IAddButton> = ({ title, handleClick }) => {
+const AddButton: React.FC<IAddButton> = (props: IAddButton) => {
+  const { title, handleClick } = props;
+
   return (
     <div className="add-button">
       <button type="button" onClick={handleClick}>

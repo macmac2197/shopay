@@ -13,7 +13,8 @@ interface IProductCard {
   addToBasket: (product: ProductInterface) => void;
 }
 
-const ProductCard: React.FC<IProductCard> = ({ product, addToBasket }) => {
+const ProductCard: React.FC<IProductCard> = (props: IProductCard) => {
+  const { product, addToBasket } = props;
   const {
     id,
     title,
@@ -77,6 +78,7 @@ const ProductCard: React.FC<IProductCard> = ({ product, addToBasket }) => {
         <div className="card-img">
           <img src={thumbnail} alt={title} />
         </div>
+        {/* Out of stock */}
         {isShowOutOfStock && <div className="card-stock">Out of stock</div>}
         {/* Product actions button */}
         {isProductActive && (

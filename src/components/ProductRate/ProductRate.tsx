@@ -9,8 +9,8 @@ interface IProductRate {
   stock: number;
 }
 
-const ProductRate: React.FC<IProductRate> = (productRate: IProductRate) => {
-  const { rate, stock } = productRate;
+const ProductRate: React.FC<IProductRate> = (props: IProductRate) => {
+  const { rate, stock } = props;
   const stars: number[] = [1, 2, 3, 4, 5]; // number of stars used for product rate
 
   return (
