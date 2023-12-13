@@ -17,7 +17,7 @@ const DialogBox: React.FC<IDialogBox> = (props: IDialogBox) => {
         <div className="dialog-header">
           <div className="dialog-title">Successfully added to basket</div>
           <div className="dialog-close" onClick={onClose}>
-            <CloseIcon />
+            <CloseIcon role="img" />
           </div>
         </div>
         {children}

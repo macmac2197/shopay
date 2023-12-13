@@ -29,6 +29,7 @@
       }
       & .dialog-close {
         margin-left: auto;
+        cursor: pointer;
         & svg {
           margin-top: -2px;
         }

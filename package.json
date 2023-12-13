@@ -21,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --testPathPattern='src/test/components/.*\\.test\\.[jt]sx?$' --verbose --forceExit",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
